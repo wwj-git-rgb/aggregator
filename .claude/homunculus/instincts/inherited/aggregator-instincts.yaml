@@ -1,0 +1,497 @@
+# Instincts generated from https://github.com/wwj-git-rgb/aggregator
+# Generated: 2026-05-25T05:00:04.093Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: aggregator-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Commit Length
+
+## Action
+
+Keep commit messages concise (~30 characters)
+
+## Evidence
+
+- Average commit message length: 30 chars
+- Based on 100 commits
+
+---
+id: aggregator-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: aggregator-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: aggregator-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: aggregator-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: aggregator-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: 
+
+---
+id: aggregator-workflow-subscribe-module-feature-development
+trigger: "when doing subscribe module feature development"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Workflow Subscribe Module Feature Development
+
+## Action
+
+Follow the subscribe-module-feature-development workflow:
+1. Edit or create one or more of: aggregate/subscribe/airport.py, clash.py, crawl.py, process.py, push.py, renewal.py, utils.py, mailtm.py, workflow.py, collect.py
+2. Optionally update subconverter configs (pref.example.ini/yml/toml) if relevant
+3. Commit changes with a message describing the feature or fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: aggregate/subscribe/airport.py, aggregate/subscribe/clash.py, aggregate/subscribe/crawl.py
+
+---
+id: aggregator-workflow-subconverter-config-update
+trigger: "when doing subconverter config update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Workflow Subconverter Config Update
+
+## Action
+
+Follow the subconverter-config-update workflow:
+1. Edit one or more of: aggregate/subconverter/pref.example.ini, pref.example.yml, pref.toml
+2. Optionally edit subscribe module files to match config changes
+3. Commit changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: aggregate/subconverter/pref.example.ini, aggregate/subconverter/pref.example.yml, aggregate/subconverter/pref.toml
+
+---
+id: aggregator-workflow-add-or-update-push-channels
+trigger: "when doing add or update push channels"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Workflow Add Or Update Push Channels
+
+## Action
+
+Follow the add-or-update-push-channels workflow:
+1. Edit aggregate/subscribe/push.py
+2. Optionally edit related subscribe files (process.py, workflow.py, etc.)
+3. Commit changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: aggregate/subscribe/push.py, aggregate/subscribe/process.py, aggregate/subscribe/workflow.py
+
+---
+id: aggregator-workflow-cmd-script-batch-update
+trigger: "when doing cmd script batch update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/wwj-git-rgb/aggregator
+---
+
+# Aggregator Workflow Cmd Script Batch Update
+
+## Action
+
+Follow the cmd-script-batch-update workflow:
+1. Edit or add files in aggregate/cmd/*.cmd, *.bat, *.sh
+2. Optionally update subconverter config files if relevant
+3. Commit changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: aggregate/cmd/clash-update.bat, aggregate/cmd/clash-update.cmd, aggregate/cmd/clash.meta-update.cmd
+
+---
+id: aggregator-instinct-file-naming
+trigger: "When creating a new Python file or renaming an existing one"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct File Naming
+
+## Action
+
+Use PascalCase for file names (e.g., ClashConfig.py)
+
+## Evidence
+
+- Pattern in namingConventions.files: PascalCase
+
+---
+id: aggregator-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Function Naming
+
+## Action
+
+Use camelCase for function names (e.g., parseYamlFile)
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: aggregator-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names (e.g., ProxyHandler)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: aggregator-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names (e.g., MAX_RETRIES)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: aggregator-instinct-import-style
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: aggregator-instinct-export-style
+trigger: "When exporting functions or classes from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: aggregator-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Test Location
+
+## Action
+
+Place test files in a separate test directory, not mixed with src
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+
+---
+id: aggregator-instinct-test-after-feature
+trigger: "When implementing a new feature"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Test After Feature
+
+## Action
+
+Add or update tests for the feature immediately after implementation
+
+## Evidence
+
+- Workflows: feature-development commitSequence includes 'Add tests for feature' after implementation
+
+---
+id: aggregator-instinct-commit-format-freeform
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Commit Format Freeform
+
+## Action
+
+Use a short, freeform message describing the action (e.g., 'integrate mail.tm', 'support parse yaml file')
+
+## Evidence
+
+- Pattern in commits.examples: short, freeform messages
+
+---
+id: aggregator-instinct-commit-length-short
+trigger: "When writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Commit Length Short
+
+## Action
+
+Keep commit messages concise, typically under 40 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 30
+- commits.examples
+
+---
+id: aggregator-instinct-subscribe-module-feature
+trigger: "When adding, changing, or fixing subscription logic (crawling, processing, proxy handling)"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Subscribe Module Feature
+
+## Action
+
+Edit or create one or more files in aggregate/subscribe/, optionally update subconverter configs, and commit with a descriptive message
+
+## Evidence
+
+- Workflow: subscribe-module-feature-development
+- High frequency in commit history
+
+---
+id: aggregator-instinct-subconverter-config-update
+trigger: "When adjusting subconverter behavior or providing new config examples"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Subconverter Config Update
+
+## Action
+
+Edit aggregate/subconverter/pref.example.ini, pref.example.yml, or pref.toml, optionally update subscribe module files, and commit changes
+
+## Evidence
+
+- Workflow: subconverter-config-update
+- Pattern in filesInvolved
+
+---
+id: aggregator-instinct-add-push-channel
+trigger: "When supporting a new push channel or modifying push logic"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Add Push Channel
+
+## Action
+
+Edit aggregate/subscribe/push.py and optionally related subscribe files, then commit changes
+
+## Evidence
+
+- Workflow: add-or-update-push-channels
+- Pattern in filesInvolved
+
+---
+id: aggregator-instinct-cmd-script-update
+trigger: "When automating or improving operational scripts for the system"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: wwj-git-rgb/aggregator
+---
+
+# Aggregator Instinct Cmd Script Update
+
+## Action
+
+Edit or add files in aggregate/cmd/*.cmd, *.bat, *.sh, optionally update subconverter config files, and commit changes
+
+## Evidence
+
+- Workflow: cmd-script-batch-update
+- Pattern in filesInvolved
+
